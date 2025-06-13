@@ -8,7 +8,8 @@ import 'features/pokemon/presentation/pages/pokemon_list_page.dart';
 import 'package:dio/dio.dart';
 
 class PokemonApp extends StatelessWidget {
-  const PokemonApp({super.key});
+  final DateTime startTime;
+  const PokemonApp({required this.startTime, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class PokemonApp extends StatelessWidget {
     return MaterialApp(
       home: BlocProvider(
         create: (_) => PokemonListBloc(repository)..add(LoadPokemonList()),
-        child: PokemonListPage(),
+        child: PokemonListPage(startTime: startTime),
       ),
     );
   }

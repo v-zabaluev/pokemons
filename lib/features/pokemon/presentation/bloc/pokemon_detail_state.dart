@@ -27,3 +27,4 @@ class PokemonDetailError extends PokemonDetailState {
   @override
   List<Object?> get props => [message];
 }
+

@@ -6,3 +6,12 @@ abstract class PokemonListEvent extends Equatable {
 }
 
 class LoadPokemonList extends PokemonListEvent {}
+
+class SearchPokemonList extends PokemonListEvent {
+  final String query;
+
+  SearchPokemonList(this.query);
+
+  @override
+  List<Object?> get props => [query];
+}

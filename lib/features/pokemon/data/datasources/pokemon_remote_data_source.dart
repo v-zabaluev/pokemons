@@ -8,7 +8,7 @@ class PokemonRemoteDataSource {
   PokemonRemoteDataSource(this.dio);
 
   Future<List<PokemonListItemModel>> fetchPokemonList() async {
-    final response = await dio.get('pokemon?limit=50');
+    final response = await dio.get('pokemon?limit=-1');
     final results = response.data['results'] as List;
     return results.map((json) => PokemonListItemModel.fromJson(json)).toList();
   }
